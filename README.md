@@ -1,5 +1,7 @@
 # Geonames::Data
 
+[![Gem Version][gem-badge]][gem]
+
 Library for working with [Geonames data][geonames-data].
 
 ## Installation
@@ -72,3 +74,5 @@ index.nearest(-37.814, 144.96332)
 5. Create new Pull Request
 
 [geonames-data]: http://download.geonames.org/export/dump
+[gem-badge]:     https://badge.fury.io/rb/geonames-data.svg
+[gem]:           http://badge.fury.io/rb/geonames-data
