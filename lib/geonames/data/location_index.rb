@@ -15,6 +15,10 @@ module Geonames
         @features[@index.nearest(latitude, longitude)]
       end
 
+      def nearestk(latitude, longitude, count)
+        @features.values_at(*@index.nearestk(latitude, longitude, count))
+      end
+
       def self.load(filepath, &filter)
         new(Features.load(filepath, filter))
       end
