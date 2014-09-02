@@ -3,7 +3,7 @@ module Geonames
     class NameIndex
       def initialize(features)
         @index = features.inject({}) do |index, feature|
-          feature.names.inject(index) do |index, name|
+          feature.names.map(&:downcase).inject(index) do |index, name|
             index[name] ||= []
             index[name].push(feature).uniq!
             index
@@ -12,7 +12,7 @@ module Geonames
       end
 
       def [](name)
-        @index[name]
+        @index[name.downcase]
       end
 
       def self.load(filepath, &filter)
